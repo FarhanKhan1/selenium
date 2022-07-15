@@ -5,26 +5,15 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-# Keys = ['VER','USVP','TWM','TTHETRANTELEM','TE','TBI','TALKMD','TALKEHR','SHMRK','SF','SE','RPM','RPA',
-# 'ROI','RCM','RAIN', 'QA','PST','PS','PMO','PM','PLAT','PERF'
-# ]
 
-KEYS = {'Websoft':'MTBCWEB',
-'RBS':'MTBCRBS',
-'Database':'MTBCOP',
-'UI/UX':'MTBCMHEAL',
-'MTBC-DEVOPS':'MTBCDEV',
-'Datascience':'MTBCDAT',
-'Business Intelligence':'MTBCBI'
-}
+
 driver.get("https://jira.carecloud.com/login.jsp")
 content = driver.page_source
 driver.maximize_window()
 print(driver.title)
 username = driver.find_element(By.ID, 'login-form-username')
 password = driver.find_element(By.ID, 'login-form-password')
-username.send_keys("fkhan")
-password.send_keys("loginjira@123")
+
 driver.find_element(By.ID, 'login-form-submit').click()
 print(driver.get_cookies())
 
