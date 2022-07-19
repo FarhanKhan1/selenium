@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 
-driver.get("https://jira.carecloud.com/login.jsp")
+driver.get("login_URL")
 content = driver.page_source
 driver.maximize_window()
 print(driver.title)
